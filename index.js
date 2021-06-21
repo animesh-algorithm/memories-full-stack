@@ -23,9 +23,9 @@ app.use(cors())
 // ROutes Middleware
 app.use('/posts', postRoutes)
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use(express.static('.'))
-// }
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
+}
 
 const PORT = process.env.PORT || 5000
 
