@@ -6,6 +6,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import connectDB from './config/db.js'
 import postRoutes from  './routes/posts.js'
+import userRoutes from  './routes/users.js'
 
 // Load Config
 dotenv.config({
@@ -22,6 +23,7 @@ app.use(cors())
 
 // ROutes Middleware
 app.use('/posts', postRoutes)
+app.use('/user', userRoutes)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
